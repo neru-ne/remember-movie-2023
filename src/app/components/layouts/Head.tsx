@@ -1,5 +1,5 @@
 'use client'
-import { CommonMeta } from "@/app/components/layout/CommonMeta"
+import { CommonMeta } from "@/app/components/layouts/CommonMeta"
 import { metaData } from "@/app/options/metaData"
 import { usePathname } from "next/navigation";
 import { typeMetaDataObj, typeMetaData } from "@/app/types/common";

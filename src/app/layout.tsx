@@ -1,5 +1,7 @@
 import './globals.css'
-import { Head } from "@/app/components/layout/Head"
+import { Head } from "@/app/components/layouts/Head"
+import {Header} from "@/app/components/layouts/Header"
+import { Footer } from '@/app/components/layouts/Footer'
 
 
 export default function RootLayout({
@@ -11,11 +13,11 @@ export default function RootLayout({
     <html lang="ja" prefix="og: http://ogp.me/ns#">
       <Head/>
       <body>
-        <header></header>
+        <Header />
         <main>
           {children}
         </main>
-        <footer></footer>
+        <Footer />
       </body>
     </html>
   )
