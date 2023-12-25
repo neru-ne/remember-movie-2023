@@ -4,17 +4,21 @@ import Link from "next/link"
 export function FooterNavi(props: typeFooterNavi) {
   return (
     <>
-      <ul>
+      <ul className="footer-navi">
         <li className="">
           <Link href="/">
-            <span className="icon-home"></span>
-            <span>Home</span>
+            <span className="footer-navi__items">
+              <span className="icon-home text-[30px]"></span>
+              <span className="text-sm">Home</span>
+            </span>
           </Link>
         </li>
-        <li>
+        <li className="">
           <Link href="/search">
-            <span className="icon-search"></span>
-            <span>Search</span>
+            <span className="footer-navi__items">
+              <span className="icon-search text-[30px]"></span>
+              <span className="text-sm">Search</span>
+            </span>
             </Link>
         </li>
       </ul>

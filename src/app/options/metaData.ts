@@ -6,7 +6,7 @@ export const metaData = {
     type: "string",
     imageUrl: "string",
   },
-  "/about/": {
+  "/about": {
     title: 'about page',
     description: 'this page is about',
     url: "string",

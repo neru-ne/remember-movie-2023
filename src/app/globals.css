@@ -62,3 +62,42 @@
 :root {}
 
 body {}
+
+
+
+@layer components {
+  .inner {
+    @apply mx-auto w-full;
+    max-width: 1080px;
+  }
+
+  .l-footer {
+    @apply bg-[#F8F8F8];
+  }
+
+  .footer-bottom {
+    @apply bg-[#3B3B3B] py-5 px-4 text-white;
+  }
+
+  .footer-navi {
+    @apply bg-[#3B3B3B] flex;
+  }
+
+  .footer-navi>li {
+    @apply flex w-full;
+  }
+
+  .footer-navi>li:first-child {
+    @apply relative before:content-[""] before:w-[1px] before:h-[calc(100%_-_8px)] before:bg-white before:absolute before:top-[4px] before:right-0;
+  }
+
+  .footer-navi>li a {
+    @apply flex items-center justify-center p-1 text-white;
+    width: 100%;
+  }
+
+  .footer-navi__items span {
+    @apply text-center;
+    display: block;
+  }
+}

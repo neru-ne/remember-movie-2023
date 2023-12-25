@@ -7,8 +7,9 @@ export function FooterList(props: typeFooterList[]) {
     <ul>
       {
           Object.values(props).map((item,index)=>{
+            const listClass = index != 0 ? "mt-5" :"";
             return(
-              <li key={`footerList-${index}`}>
+              <li key={`footerList-${index}`} className={listClass}>
                 <Link href={item.url}>{item.name}</Link>
               </li>
             )

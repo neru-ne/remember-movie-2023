@@ -27,7 +27,7 @@ export function Footer() {
       url: "/disclaimer"
     },
   ];
-  const footerNaviArray : typeFooterNavi = {
+  const footerNaviArray: typeFooterNavi = {
     home: {
       active: true,
     },
@@ -37,23 +37,24 @@ export function Footer() {
   }
   return (
     <>
-      <footer className="l-footer bg-[#F8F8F8]">
+      <footer className="l-footer">
         {
           pathname != "/" && <FooterNavi {...footerNaviArray} />
         }
-        <div>
+        <div className='px-4 py-[60px]'>
           <FooterList {...footerListArray} />
         </div>
-        <div className="bg-[#3B3B3B]">
-          <div>
-            <div>
-              <div>
+        <div className="footer-bottom">
+          <div className="inner">
+            <div className='flex gap-2 items-start mb-10'>
+              <img src="assets/images/tmdb_logo.svg" alt="tmdb" />
+              <div className='text-sm'>
                 Remember MovieはTMDB APIを使用しています。
                 This product uses the TMDB API but is not endorsed or certified by TMDB.
               </div>
             </div>
+            <p className='text-center text-sm'>&copy; {new Date().getFullYear()}  Remember Movie.</p>
           </div>
-          <p>&copy; {new Date().getFullYear()}  Remember Movie.</p>
         </div>
       </footer>
     </>
