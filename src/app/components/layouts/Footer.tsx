@@ -49,8 +49,8 @@ export function Footer() {
             <div className='flex gap-2 items-start mb-10'>
               <img src="assets/images/tmdb_logo.svg" alt="tmdb" />
               <div className='text-sm'>
-                Remember MovieはTMDB APIを使用しています。
-                This product uses the TMDB API but is not endorsed or certified by TMDB.
+                Remember MovieはTMDb APIを使用しています。
+                This product uses the TMDb API but is not endorsed or certified by TMDB.
               </div>
             </div>
             <p className='text-center text-sm'>&copy; {new Date().getFullYear()}  Remember Movie.</p>

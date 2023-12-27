@@ -150,6 +150,10 @@ body {
   @apply mt-10;
 }
 
+a:not(class)[target=_blank] {
+  @apply underline;
+}
+
 a:not(class)[target=_blank]::after {
   font-family: 'icomoon' !important;
   speak: never;
