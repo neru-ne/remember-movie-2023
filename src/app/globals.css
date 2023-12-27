@@ -61,16 +61,30 @@
 
 :root {}
 
-body {}
+body {
+  @apply text-default;
+}
 
 
 
 @layer components {
+
+  /*common */
   .inner {
     @apply mx-auto w-full;
     max-width: 1080px;
   }
 
+  /* header  */
+  .l-header {
+    @apply bg-[#07BCA7] py-2.5 px-4
+  }
+
+  .l-header__top {
+    @apply text-center py-[60px];
+  }
+
+  /* footer */
   .l-footer {
     @apply bg-[#F8F8F8];
   }
@@ -88,7 +102,17 @@ body {}
   }
 
   .footer-navi>li:first-child {
-    @apply relative before:content-[""] before:w-[1px] before:h-[calc(100%_-_8px)] before:bg-white before:absolute before:top-[4px] before:right-0;
+    @apply relative;
+  }
+
+  .footer-navi>li:first-child::before {
+    content: "";
+    width: 1px;
+    height: calc(100% - 8px);
+    background: #fff;
+    position: absolute;
+    top: 4px;
+    right: 0;
   }
 
   .footer-navi>li a {
@@ -100,4 +124,43 @@ body {}
     @apply text-center;
     display: block;
   }
+}
+
+/* title */
+.page-title {
+  @apply text-[28px] font-bold mt-10 pb-[30px] px-2 relative;
+}
+
+.page-title::before {
+  content: "";
+  width: 100%;
+  height: 10px;
+  background: rgb(7, 188, 167);
+  background: linear-gradient(60deg, rgba(7, 188, 167, 1) 61%, rgba(183, 255, 171, 1) 100%);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.section-title {
+  @apply text-[18px] font-medium pb-2.5 mb-5 border-[#D9D9D9] border-b-[4px];
+}
+
+.section-title:nth-of-type(n+2) {
+  @apply mt-10;
+}
+
+a:not(class)[target=_blank]::after {
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e905";
 }
