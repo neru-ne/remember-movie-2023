@@ -168,3 +168,13 @@ a:not(class)[target=_blank]::after {
   -moz-osx-font-smoothing: grayscale;
   content: "\e905";
 }
+
+/* list  */
+.indent-list>li {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+.indent-list>li+li {
+  margin-top: 10px;
+}

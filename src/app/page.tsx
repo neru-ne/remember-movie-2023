@@ -1,7 +1,10 @@
 
 export default function Home() {
   return (
-    <>TOP
+    <>
+      <div className="pt-[60px] pb-[100px] px-2 inner">
+        TOP
+      </div>
     </>
   )
 }
