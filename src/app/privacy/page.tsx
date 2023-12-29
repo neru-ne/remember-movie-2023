@@ -7,7 +7,7 @@ export default function Privacy() {
   return (
     <>
       <PageHeading>プライバシーポリシー</PageHeading>
-      <div className="pt-[60px] pb-[100px] px-2 inner">
+      <div className="pt-[60px] pb-[100px] px-4 inner">
         <SectionTitle>アクセス解析ツールについて</SectionTitle>
         <p>当サイトでは、Googleによるアクセス解析ツー
           ル「Googleアナリティクス」を利用しています

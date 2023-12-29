@@ -38,10 +38,8 @@ export function Footer() {
   return (
     <>
       <footer className="l-footer">
-        {
-          pathname != "/" && <FooterNavi {...footerNaviArray} />
-        }
-        <div className='px-4 py-[60px]'>
+        <FooterNavi {...footerNaviArray} />
+        <div className='px-4 py-[60px] inner'>
           <FooterList {...footerListArray} />
         </div>
         <div className="footer-bottom">

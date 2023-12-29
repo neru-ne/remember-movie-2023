@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <PageHeading>このサイトについて</PageHeading>
-      <div className="pt-[60px] pb-[100px] px-2 inner">
+      <div className="pt-[60px] pb-[100px] px-4 inner">
           <img src="assets/images/logo.svg" alt="Remember Movie" className="w-[210px] mx-auto mb-[50px]" />
         <p className="text-center text-[20px] mb-[50px]">新作映画の公開予定日を<br/>Googleカレンダーに<br />登録するだけの<br />シンプルなサービスです。</p>
         <p className="mb-[30px]">気になる映画の公開予定日をGoogleカレンダーに登録できます。</p>

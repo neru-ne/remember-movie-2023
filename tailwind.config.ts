@@ -10,11 +10,14 @@ const config: Config = {
     fontSize:{
       sm: '0.8rem',
       base: '1rem',
+      lg: '1.125rem',
+      xl:'1.25rem',
     },
     extend: {
       colors:{
         'default':'#333',
         'primary':'#07BCA7',
+        'secondary':'#4E4E4E',
         'bgEnd':'#B7FFAB',
       }
     },

@@ -63,8 +63,16 @@
 
 body {
   @apply text-default;
+  position: static;
 }
 
+body.is-fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 
 
 @layer components {
@@ -81,7 +89,7 @@ body {
   }
 
   .l-header__top {
-    @apply text-center py-[60px];
+    @apply text-center pt-[60px];
   }
 
   /* footer */
@@ -128,7 +136,7 @@ body {
 
 /* title */
 .page-title {
-  @apply text-[28px] font-bold mt-10 pb-[30px] px-2 relative;
+  @apply text-[28px] font-bold mt-10 pb-[30px] px-4 relative;
 }
 
 .page-title::before {
@@ -146,15 +154,27 @@ body {
   @apply text-[18px] font-medium pb-2.5 mb-5 border-[#D9D9D9] border-b-[4px];
 }
 
+.section-title.-primary {
+  @apply border-[#07BCA7];
+}
+
 .section-title:nth-of-type(n+2) {
   @apply mt-10;
 }
 
-a:not(class)[target=_blank] {
+.top-heading {
+  @apply text-white font-bold text-lg p-4;
+  background: rgb(7, 188, 167);
+  background: linear-gradient(60deg, rgba(7, 188, 167, 1) 61%, rgba(183, 255, 171, 1) 100%);
+}
+
+
+/* link */
+a:not([class])[target=_blank] {
   @apply underline;
 }
 
-a:not(class)[target=_blank]::after {
+a:not([class])[target=_blank]::after {
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -177,4 +197,49 @@ a:not(class)[target=_blank]::after {
 
 .indent-list>li+li {
   margin-top: 10px;
+}
+
+/* loading  */
+.loading {
+  @apply fixed w-full h-full bg-white/70 top-0 right-0 flex items-center justify-center;
+  z-index: 101;
+  transition: visibility .3s, opacity .3s, z-index .3s;
+}
+
+.loading img {
+  width: 100px;
+}
+
+.loading.is-loaded {
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+
+}
+
+/* modal  */
+.modal {
+  @apply fixed w-full h-full bg-white top-0 left-0 opacity-0;
+  visibility: hidden;
+  z-index: 100;
+  transition: visibility .3s, opacity .3s, z-index .3s;
+}
+
+.modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* button  */
+.button {
+  @apply text-white font-bold bg-primary rounded-md w-full max-w-[600px] mx-auto py-[18px] px-[50px] no-underline text-center relative;
+}
+
+.button-sm {
+  @apply inline-block border bg-white border border-black rounded-full py-2.5 px-[28px];
+}
+
+.button-sm.-primary {
+  border-color: #07BCA7;
+  color: #07BCA7;
 }

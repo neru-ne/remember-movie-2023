@@ -1,5 +1,22 @@
-export const SectionTitle = ({ children }: { children: React.ReactNode }) => {
+export const SectionTitle = (
+  props:{
+    mode?:'primary' ;
+    children: React.ReactNode
+  }
+  ) => {
+  const {mode,children} = props;
+  let thisClass = "section-title";
+  if (mode){
+    switch (mode) {
+      case "primary":
+        thisClass = thisClass + " -primary";
+        break;
+      default:
+        break;
+    }
+  }
+
   return (
-    <h2 className="section-title">{children}</h2>
+    <h2 className={thisClass}>{children}</h2>
   )
 }
