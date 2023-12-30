@@ -1,16 +1,40 @@
+const siteTitle = "Remember Movie";
+const DOMAIN = "https://remember-movie.style01.net";
+const ogp = "assets/images/OGP.jpg";
 export const metaData = {
   "/": {
-    title: 'TOP',
-    description: 'this page is TOP',
-    url: "string",
-    type: "string",
-    imageUrl: "string",
+    title: siteTitle,
+    description: '新作映画の公開予定日をGoogleカレンダーに登録するだけのシンプルなサービスです。',
+    url: DOMAIN,
+    type: "website",
+    imageUrl: ogp,
   },
   "/about": {
-    title: 'about page',
-    description: 'this page is about',
-    url: "string",
-    type: "string",
-    imageUrl: "string",
+    title: `${siteTitle} | このサイトについて`,
+    description: 'このサイトについて',
+    url: `${DOMAIN}/about`,
+    type: "article",
+    imageUrl: ogp,
+  },
+  "/privacy": {
+    title: `${siteTitle} | プライバシーポリシー`,
+    description: 'プライバシーポリシー',
+    url: `${DOMAIN}/privacy`,
+    type: "article",
+    imageUrl: ogp,
+  },
+  "/disclaimer": {
+    title: `${siteTitle} | 免責事項`,
+    description: '免責事項',
+    url: `${DOMAIN}/disclaimer`,
+    type: "article",
+    imageUrl: ogp,
+  },
+  "/search": {
+    title: `${siteTitle} | 検索`,
+    description: '検索',
+    url: `${DOMAIN}/search`,
+    type: "article",
+    imageUrl: ogp,
   },
 }

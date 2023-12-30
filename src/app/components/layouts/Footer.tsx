@@ -15,6 +15,10 @@ export function Footer() {
       url: "/"
     },
     {
+      name: "検索",
+      url: "/search"
+    },
+    {
       name: "このサイトについて",
       url: "/about"
     },

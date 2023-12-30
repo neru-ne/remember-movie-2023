@@ -6,6 +6,8 @@ type Props = {
   imageUrl: string
 }
 
+const siteTitle = "Remember Movie";
+
 export const CommonMeta = (props: Props) => {
   const { title, description, url, type, imageUrl } = props
   return (
@@ -15,7 +17,7 @@ export const CommonMeta = (props: Props) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:site_name" content={title} />
+      <meta property="og:site_name" content={siteTitle} />
       <meta property="og:type" content={type} />
       <meta property="og:image" content={imageUrl} />
 
@@ -23,7 +25,8 @@ export const CommonMeta = (props: Props) => {
 
       {/* twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@tcr_jp" />
+      <meta name="twitter:site" content="@RememberMovie" />
+      <meta name="twitter:domain" content="remember-movie.style01.net" />
       <meta name="twitter:url" content={imageUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
@@ -33,8 +36,8 @@ export const CommonMeta = (props: Props) => {
       {/* <link rel="canonical" href={url} /> */}
 
       {/* shortcut icon */}
-      <link rel="shortcut icon" href={'https://t-cr.jp/favicon.ico'} />
-      <link rel="apple-touch-icon" href={'https://t-cr.jp/logo.png'} />
+      <link rel="shortcut icon" href="assets/images/android-touch-icon.png"/>
+      <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
     </>
   )
 }

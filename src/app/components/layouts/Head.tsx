@@ -17,8 +17,6 @@ export function Head () {
   } else {
     metadata = metaData["/"];
   }
-  console.log(metadata)
-
   return(
       <CommonMeta {...metadata} />
   )
