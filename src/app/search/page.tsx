@@ -8,13 +8,15 @@ export default function Search() {
 
   return (
     <>
-      <PageHeading>検索</PageHeading>
-      <div className="pt-[60px] px-4 inner">
-        <SearchDate/>
-        <SearchGenre />
-      </div>
-      <div className="pb-[100px] mt-[96px]">
-        <SearchResult />
+      <div id="search">
+        <PageHeading>検索</PageHeading>
+        <div className="pt-[60px] px-4 inner">
+          <SearchDate />
+          <SearchGenre />
+        </div>
+        <div className="pb-[100px] mt-[96px]">
+          <SearchResult />
+        </div>
       </div>
     </>
   )

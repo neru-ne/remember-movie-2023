@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { CountContext } from '@/app/layout';
 
 import { SectionTitle } from "@/app/components/atoms/heading/SectionTitle"
-import {Selectbox} from '@/app/components/atoms/input/Selectbox';
+import { DateSelectbox } from '@/app/components/atoms/input/DateSelectbox';
 
 //type
 import { typeSelectedDateProps } from '@/app/types/context'
@@ -89,7 +89,7 @@ export const SearchDate = () => {
   return (
     <div >
       <SectionTitle mode='primary'>公開時期</SectionTitle>
-      <Selectbox data={dateArray} selectChange={selectChange} />
+      <DateSelectbox data={dateArray} selectChange={selectChange} />
     </div>
   )
 }

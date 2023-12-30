@@ -85,7 +85,7 @@ body.is-fixed {
 
   /* header  */
   .l-header {
-    @apply bg-[#07BCA7] py-2.5 px-4
+    @apply bg-primary py-2.5 px-4
   }
 
   .l-header__top {
@@ -155,7 +155,7 @@ body.is-fixed {
 }
 
 .section-title.-primary {
-  @apply border-[#07BCA7];
+  @apply border-primary;
 }
 
 .section-title:nth-of-type(n+2) {
@@ -232,7 +232,7 @@ a:not([class])[target=_blank]::after {
 
 /* button  */
 .button {
-  @apply text-white font-bold bg-primary rounded-md w-full max-w-[600px] mx-auto py-[18px] px-[50px] no-underline text-center relative;
+  @apply text-white font-bold bg-primary rounded-md w-full max-w-[600px] mx-auto py-[18px] px-2.5 no-underline text-center;
 }
 
 .button-sm {
@@ -240,6 +240,22 @@ a:not([class])[target=_blank]::after {
 }
 
 .button-sm.-primary {
-  border-color: #07BCA7;
-  color: #07BCA7;
+  @apply border-primary text-primary;
+}
+
+/* input  */
+.c-checkbox:checked+label .icon-done {
+  @apply text-primary;
+}
+
+.result {
+  display: none;
+}
+
+.result.is-show {
+  display: block;
+}
+
+.grid-row-subgrid {
+  grid-template-rows: subgrid;
 }

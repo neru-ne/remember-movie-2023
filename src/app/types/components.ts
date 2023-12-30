@@ -40,8 +40,17 @@ export type typeModalContent = {
 
 // input
 export type typeSelectbox = {
-  data: { date: string; first: string; last: string; }[],
-  selectChange: any,
+  domId: string;
+  data: {
+    value: string;
+    name: string
+  }[];
+  selectChange: any;
+}
+
+export type typeDateSelectbox = {
+  data: { date: string; first: string; last: string; }[];
+  selectChange: any;
 }
 
 export type typeCheckbox = {

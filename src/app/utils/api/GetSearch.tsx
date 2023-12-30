@@ -1,4 +1,6 @@
 "use client";
+import { scroller } from 'react-scroll';
+
 import { useContext, useEffect } from 'react';
 import { CountContext } from '@/app/layout';
 
@@ -61,8 +63,6 @@ export const GetSearch = (
     return '&language=ja&include_adult=false&include_video=false' + searchDate + searchGenre + searchCurrentPage + searchSort;
   }
 
-
-
   useEffect(() => {
     if (searchFlg) {
 
@@ -110,6 +110,15 @@ export const GetSearch = (
       })()
 
       setResultFlg(true);
+
+      if (!moreBtn)  {
+        //検索結果までスクロール
+        scroller.scrollTo('search-result', {
+          delay: 0,
+          smooth: true,
+        })
+      }
+
     }
   }, [searchFlg]);
 }

@@ -36,12 +36,12 @@ export const Listitem = (
   }
 
   return (
-    <div onClick={openModal}>
+    <li className='grid grid-row-subgrid row-span-3 gap-3.5' onClick={openModal}>
       <img src={imgUrl} alt="" />
-      <div className="mt-3.5">
+      <div className="">
         <DateLabel>{itemDate}</DateLabel>
       </div>
-      <p className="mt-3.5 text-lg">{title}</p>
-    </div>
+      <p className="text-lg">{title}</p>
+    </li>
   )
 }

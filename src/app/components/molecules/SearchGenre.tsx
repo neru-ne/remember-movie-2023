@@ -4,7 +4,7 @@ import { CountContext } from '@/app/layout';
 
 import { SectionTitle } from "@/app/components/atoms/heading/SectionTitle"
 
-import {Checkbox} from '@/app/components/atoms/input/Checkbox';
+import { Checkbox } from '@/app/components/atoms/input/Checkbox';
 //types
 import { typeSessionGenres } from '@/app/types/api';
 
@@ -23,7 +23,7 @@ export const SearchGenre = () => {
 
   const genreSet = () => {
     let sessionGenres = sessionStorage.getItem('genres');
-    let sessionGenresParse: { genres: typeSessionGenres[] } ;
+    let sessionGenresParse: { genres: typeSessionGenres[] };
     let genre: typeSessionGenres[] = [];
     if (sessionGenres) {
       sessionGenresParse = JSON.parse(sessionGenres);
@@ -62,14 +62,12 @@ export const SearchGenre = () => {
       <div className="mt-10">
         <SectionTitle mode='primary'>ジャンル</SectionTitle>
         <div className="search-content">
-          <ul className="radio-list">
+          <ul className="flex flex-wrap gap-4">
             {
               checkedItems.map((item: typeSessionGenres, index: number) => {
                 return (
-                  <li key={index}>
-                    <div className="radio-item">
-                      <Checkbox id={item.id} index={index} checked={item.checked} checkboxClick={checkboxClick} name={item.name} />
-                    </div>
+                  <li key={index} className=''>
+                    <Checkbox id={item.id} index={index} checked={item.checked} checkboxClick={checkboxClick} name={item.name} />
                   </li>
                 )
               })

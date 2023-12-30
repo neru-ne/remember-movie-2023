@@ -36,7 +36,7 @@ export const ModalContent = (props: typeModalContent) => {
    * @returns
    */
   const genreSet = () => {
-    let genreResult:string[] = [];
+    let genreResult: string[] = [];
 
     let sessionGenres = sessionStorage.getItem('genres');
     let sessionGenresObj: { genres: typeSessionGenres[] };
@@ -65,7 +65,7 @@ export const ModalContent = (props: typeModalContent) => {
   const urlSet = () => {
 
     let thisUrl = "";
-    if (!release_date){
+    if (!release_date) {
       return;
     }
 
@@ -100,7 +100,7 @@ export const ModalContent = (props: typeModalContent) => {
           <img src={movieImg} alt="" className="mx-auto" />
         </div>
         <div className="item-genre">
-          <GenreList genres={genreResult}/>
+          <GenreList genres={genreResult} />
         </div>
         <div className="mt-10 flex justify-center">
           <AddCalendarButton url={thisUrl} />
@@ -109,11 +109,9 @@ export const ModalContent = (props: typeModalContent) => {
       {
         props.overview
           ? <div className="mt-10">
+            <p className="text-lg font-bold mb-2.5">概要</p>
             <div>
-              <p className="text-lg font-bold mb-2.5">概要</p>
-              <div>
-                <p>{props.overview}</p>
-              </div>
+              <p>{props.overview}</p>
             </div>
           </div>
           : <></>
