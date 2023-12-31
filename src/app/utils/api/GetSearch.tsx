@@ -7,8 +7,6 @@ import { CountContext } from '@/app/layout';
 import { sendApi, pageShow } from '@/app/utils/api/api'
 
 const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN;
-const hostname = window.location.hostname;
 
 export const GetSearch = (
   searchFlg: boolean,
@@ -65,11 +63,6 @@ export const GetSearch = (
 
   useEffect(() => {
     if (searchFlg) {
-
-      if (hostname != DOMAIN) {
-        setApiSuccess(false);
-        return;
-      }
 
       const getApi = getApiUrl();
 

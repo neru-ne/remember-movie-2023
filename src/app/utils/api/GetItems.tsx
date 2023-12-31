@@ -4,8 +4,6 @@ import { CountContext } from '@/app/layout';
 import { sendApi, pageShow } from '@/app/utils/api/api'
 
 const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN;
-const hostname = window.location.hostname;
 
 
 /**
@@ -39,11 +37,6 @@ export const GetItems = () => {
   }
 
   useEffect(() => {
-
-    if (hostname != DOMAIN) {
-      setApiSuccess(false);
-      return;
-    }
 
     if (0 < posts.length) {
       return;

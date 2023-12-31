@@ -7,9 +7,12 @@ import { Header } from "@/app/components/layouts/Header"
 import { Footer } from '@/app/components/layouts/Footer'
 import { Loading } from '@/app/components/atoms/loading/Loading';
 import { GetGenres } from '@/app/utils/api/GetGenres';
+import { Gtag } from '@/app/utils/ga/Gtag';
 
 //type
 import { typeSelectedDateProps } from '@/app/types/context'
+import { typeSessionGenres } from '@/app/types/api';
+
 
 export const CountContext = createContext({} as {
   isModalOpen: boolean,
@@ -30,6 +33,8 @@ export const CountContext = createContext({} as {
   setIsEmpty: React.Dispatch<React.SetStateAction<boolean>>,
   apiSuccess: boolean,
   setApiSuccess: React.Dispatch<React.SetStateAction<boolean>>,
+  genres:any,
+  setGenres: React.Dispatch<React.SetStateAction<any>>
   //以下はsearchで使う
   selectedDate: typeSelectedDateProps[],
   setSelectedDate: React.Dispatch<React.SetStateAction<typeSelectedDateProps[]>>,
@@ -48,13 +53,11 @@ export const CountContext = createContext({} as {
 
 });
 
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-
 
   const [isModalOpen, setisModalOpen] = useState(false);
   const [isModalScroll, setisModalScroll] = useState(0);
@@ -65,6 +68,7 @@ export default function RootLayout({
   const [resultFlg, setResultFlg] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
   const [apiSuccess, setApiSuccess] = useState(true);
+  const [genres,setGenres] = useState({});
   //以下はsearchで使う
   const [selectedDate, setSelectedDate] = useState<typeSelectedDateProps[]>([]);
   const [checkedItems, setCheckedItems] = useState<typeSessionGenres[]>([]);
@@ -73,8 +77,6 @@ export default function RootLayout({
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalResults, setTotalResults] = useState('');
-
-
 
   const value = {
     isModalOpen,
@@ -95,6 +97,8 @@ export default function RootLayout({
     setIsEmpty,
     apiSuccess,
     setApiSuccess,
+    genres,
+    setGenres,
     //以下はsearchで使う
     selectedDate,
     setSelectedDate,
@@ -113,12 +117,13 @@ export default function RootLayout({
   };
 
   //ジャンル取得
-  GetGenres();
+  GetGenres(setGenres);
 
   return (
     <html lang="ja" prefix="og: http://ogp.me/ns#">
       <Head />
       <body>
+        <Gtag/>
         <CountContext.Provider value={value}>
           <Header />
           <main>

@@ -11,36 +11,27 @@ import { typeSessionGenres } from '@/app/types/api';
 
 export const SearchGenre = () => {
 
-  const { checkedItems, setCheckedItems,
+  const { checkedItems, setCheckedItems, genres, setGenres,
   } = useContext(CountContext);
 
-  //チェックボックスの制御
-  let sessionGenresObj: typeSessionGenres[] = [];
 
   /**
-   * ジャンル配列
-   */
-
+ * ジャンル
+ */
   const genreSet = () => {
-    let sessionGenres = sessionStorage.getItem('genres');
-    let sessionGenresParse: { genres: typeSessionGenres[] };
-    let genre: typeSessionGenres[] = [];
-    if (sessionGenres) {
-      sessionGenresParse = JSON.parse(sessionGenres);
-      genre = sessionGenresParse.genres;
-      for (var i = 0; i < genre.length; i++) {
-        genre[i].checked = false;
-      }
-    }
-    return genre;
+    const genre: typeSessionGenres[] = [...genres];
 
+    for (let i = 0; i < genre.length; i++) {
+      genre[i].checked = false;
+    }
+    setCheckedItems(genre);
   }
 
-  sessionGenresObj = genreSet();
-
   useEffect(() => {
-    setCheckedItems(sessionGenresObj);
-  }, [])
+    if (Object.keys(genres).length != 0) {
+      genreSet();
+    }
+  }, [genres])
 
 
   const checkboxClick = (e: any) => {

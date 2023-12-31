@@ -1,4 +1,7 @@
-import React from 'react';
+"use client";
+import React, { useState,useContext, useEffect } from 'react';
+import { CountContext } from '@/app/layout';
+
 import { AddCalendarButton } from '@/app/components/atoms/button/AddCalenderButton';
 import { DateLabel } from '@/app/components/atoms/label/DateLabel';
 import { GenreList } from '@/app/components/atoms/list/GenreList';
@@ -12,6 +15,9 @@ import { typeModalContent } from '@/app/types/components';
 const noImg = '/assets/images/no_img.jpg';
 
 export const ModalContent = (props: typeModalContent) => {
+
+  const { isModalOpen,genres, setGenres } = useContext(CountContext);
+  const [genreResult, setGenreResult] = useState<string[]>([])
 
   const {
     title,
@@ -38,25 +44,27 @@ export const ModalContent = (props: typeModalContent) => {
   const genreSet = () => {
     let genreResult: string[] = [];
 
-    let sessionGenres = sessionStorage.getItem('genres');
-    let sessionGenresObj: { genres: typeSessionGenres[] };
+    let sessionGenres = [...genres];
     if (sessionGenres) {
-      sessionGenresObj = JSON.parse(sessionGenres);
-      if (!genre) {
-        return;
-      }
+
       for (let i = 0; i < genre.length; i++) {
         let genreId = genre[i].id;
 
-        let targetUser = sessionGenresObj.genres.find((v) => v.id === genreId);
+        let targetUser = sessionGenres.find((v) => v.id === genreId);
         if (targetUser) {
           genreResult.push(targetUser.name);
         }
       }
     }
-    return genreResult;
+    setGenreResult(genreResult);
   }
-  const genreResult = genreSet();
+
+  useEffect(() => {
+    if (Object.keys(genres).length != 0) {
+      genreSet();
+    }
+  }, [title])
+
 
   /**
    * URL入れ込み

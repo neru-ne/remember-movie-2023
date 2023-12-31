@@ -5,8 +5,6 @@ import { sendApi, pageShow } from '@/app/utils/api/api'
 
 
 const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN;
-const hostname = window.location.hostname;
 
 
 export const GetDetail = () => {
@@ -18,11 +16,6 @@ export const GetDetail = () => {
       return;
     }
     setIsLoading(true);
-
-    if (hostname != DOMAIN) {
-      setApiSuccess(false);
-      return;
-    }
 
     const url = 'https://api.themoviedb.org/3/movie/' + detailId + '?api_key=' + TMDB_API_KEY + '&language=ja-JA';
 
