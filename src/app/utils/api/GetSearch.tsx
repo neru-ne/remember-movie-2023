@@ -14,7 +14,8 @@ export const GetSearch = (
   moreBtn: boolean,
   setMoreBtn: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  const { setIsLoading, setResultFlg, setIsEmpty, setApiSuccess, selectedDate, checkedItems, sort, searchPosts, setSearchPosts, currentPage, setTotalPages, setTotalResults
+  const {
+    setIsLoading, setResultFlg, setIsEmpty, setApiSuccess, selectedDate, checkedItems, sort, searchPosts, setSearchPosts, currentPage, setTotalPages, setTotalResults
   } = useContext(CountContext);
 
 /**

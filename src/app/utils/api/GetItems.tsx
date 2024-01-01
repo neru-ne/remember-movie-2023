@@ -1,3 +1,4 @@
+"use client"
 import { useContext, useEffect } from 'react';
 import { CountContext } from '@/app/layout';
 

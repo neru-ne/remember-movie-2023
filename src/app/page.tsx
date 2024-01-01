@@ -1,14 +1,14 @@
 "use client";
-import { useContext } from 'react';
-import { CountContext } from '@/app/layout';
-
 import { TopPageHeading } from "@/app/components/atoms/heading/TopPageHeading";
 import { MoviesList } from '@/app/components/molecules/MoviesList';
 
 import { Modal } from "@/app/components/organisms/Modal"
 import { GetItems } from "@/app/utils/api/GetItems"
 import { GetDetail } from "@/app/utils/api/GetDetail"
+import { Button } from '@/app/components/atoms/button/Button';
 
+//types
+import { typeButton } from "@/app/types/components"
 
 
 export default function Home() {
@@ -19,6 +19,12 @@ export default function Home() {
   //個別取得
   GetDetail();
 
+  const buttonOption: typeButton = {
+    mode: "secondary-green",
+    link: true,
+    url: "/search",
+  }
+
   return (
     <>
       <div className="pt-[60px] pb-[100px]">
@@ -26,6 +32,9 @@ export default function Home() {
         <div className="inner">
           <div className="px-4 mt-10">
             <MoviesList />
+            <div className="flex justify-center mt-[60px]">
+              <Button {...buttonOption}>条件を検索する</Button>
+            </div>
           </div>
         </div>
         <Modal />

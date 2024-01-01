@@ -24,6 +24,8 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     mode:"primary",
+    link:false,
+    url:"",
     click: action("clicked"),
     children: 'Primary Button',
   },
@@ -32,6 +34,8 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     mode: "secondary",
+    link: false,
+    url: "",
     click: action("clicked"),
     children: 'Secondary Button',
   },
@@ -40,6 +44,8 @@ export const Secondary: Story = {
 export const SecondaryGreen: Story = {
   args: {
     mode: "secondary-green",
+    link: false,
+    url: "",
     click: action("clicked"),
     children: 'SecondaryGreen Button',
   },

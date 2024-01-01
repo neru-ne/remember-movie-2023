@@ -25,6 +25,13 @@ export type typeSearchMoreButton = {
   callBack: React.Dispatch<React.SetStateAction<boolean>>
   btnFlg: React.Dispatch<React.SetStateAction<boolean>>
 }
+export type typeButton = {
+  mode: "primary" | "secondary" | "secondary-green";
+  link: boolean;
+  url?: string;
+  click?: any;
+  children?: React.ReactNode;
+}
 
 //molecules
 export type typeModalContent = {

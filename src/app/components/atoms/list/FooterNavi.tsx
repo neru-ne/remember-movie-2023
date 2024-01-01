@@ -1,5 +1,5 @@
-import { typeFooterNavi } from "@/app/types/components"
 import Link from "next/link"
+import { typeFooterNavi } from "@/app/types/components"
 
 export function FooterNavi(props: typeFooterNavi) {
   return (
