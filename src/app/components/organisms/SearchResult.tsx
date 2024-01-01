@@ -19,8 +19,6 @@ import { typeItem } from "@/app/types/components";
 import { typeSelectbox } from "@/app/types/components"
 
 
-
-
 export const SearchResult = () => {
   const { resultFlg, isEmpty, apiSuccess, setSort, searchPosts, currentPage, totalPages, totalResults
   } = useContext(CountContext);

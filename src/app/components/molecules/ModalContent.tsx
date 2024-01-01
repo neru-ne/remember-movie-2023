@@ -2,13 +2,12 @@
 import React, { useState,useContext, useEffect } from 'react';
 import { CountContext } from '@/app/layout';
 
-import { AddCalendarButton } from '@/app/components/atoms/button/AddCalenderButton';
+import { AddCalendarButton } from '@/app/components/atoms/button/AddCalendarButton';
 import { DateLabel } from '@/app/components/atoms/label/DateLabel';
 import { GenreList } from '@/app/components/atoms/list/GenreList';
 
 import { dateFormated } from '@/app/utils/common';
 // types
-import { typeSessionGenres } from '@/app/types/api';
 import { typeModalContent } from '@/app/types/components';
 
 
@@ -16,7 +15,7 @@ const noImg = '/assets/images/no_img.jpg';
 
 export const ModalContent = (props: typeModalContent) => {
 
-  const { isModalOpen,genres, setGenres } = useContext(CountContext);
+  const { genres } = useContext(CountContext);
   const [genreResult, setGenreResult] = useState<string[]>([])
 
   const {
@@ -45,7 +44,7 @@ export const ModalContent = (props: typeModalContent) => {
     let genreResult: string[] = [];
 
     let sessionGenres = [...genres];
-    if (sessionGenres) {
+    if (sessionGenres && genre) {
 
       for (let i = 0; i < genre.length; i++) {
         let genreId = genre[i].id;

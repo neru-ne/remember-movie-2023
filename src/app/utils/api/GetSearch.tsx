@@ -107,7 +107,7 @@ export const GetSearch = (
       if (!moreBtn)  {
         //検索結果までスクロール
         scroller.scrollTo('search-result', {
-          delay: 0,
+          delay: 200,
           smooth: true,
         })
       }

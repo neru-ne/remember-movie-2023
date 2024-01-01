@@ -20,7 +20,6 @@ export const SearchGenre = () => {
  */
   const genreSet = () => {
     const genre: typeSessionGenres[] = [...genres];
-
     for (let i = 0; i < genre.length; i++) {
       genre[i].checked = false;
     }
