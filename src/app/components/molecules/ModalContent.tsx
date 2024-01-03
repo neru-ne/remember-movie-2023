@@ -100,28 +100,39 @@ export const ModalContent = (props: typeModalContent) => {
     <>
       <div>
         <p className="text-xl font-bold mb-5">{props.title}</p>
-        <div>
-          <DateLabel>{itemDate}</DateLabel>
-        </div>
+        {itemDate &&  (
+          <div>
+            <DateLabel>{itemDate}</DateLabel>
+          </div>
+        )}
         <div className="mt-[30px]">
           <img src={movieImg} alt="" className="mx-auto" />
         </div>
-        <div className="item-genre">
-          <GenreList genres={genreResult} />
-        </div>
-        <div className="mt-10 flex justify-center">
-          <AddCalendarButton url={thisUrl} />
-        </div>
+        {
+          0 < genreResult.length && (
+            <div className="item-genre">
+              <GenreList genres={genreResult} />
+            </div>
+          )
+        }
+        {
+          thisUrl && (
+            <div className="mt-10 flex justify-center">
+              <AddCalendarButton url={thisUrl} />
+            </div>
+          )
+        }
       </div>
       {
-        props.overview
-          ? <div className="mt-10">
+        overview
+          && (
+          <div className="mt-10">
             <p className="text-lg font-bold mb-2.5">概要</p>
             <div>
               <p>{props.overview}</p>
             </div>
           </div>
-          : <></>
+          )
       }
     </>
   )

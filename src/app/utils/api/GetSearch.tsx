@@ -3,6 +3,7 @@ import { scroller } from 'react-scroll';
 
 import { useContext, useEffect } from 'react';
 import { CountContext } from '@/app/layout';
+import { dateZeroPadding } from '@/app/utils/common';
 
 import { sendApi, pageShow } from '@/app/utils/api/api'
 
@@ -25,52 +26,49 @@ export const GetSearch = (
   const getApiUrl = () => {
 
     let searchDate = '';
-    //ゼロ埋め
-    const dateZeroPadding = (data: number) => {
-      return ('0' + data).slice(-2);
-    }
+
     //期間
     if (0 < selectedDate.length) {
-      searchDate = '&primary_release_date.gte=' + selectedDate[0].first + '&primary_release_date.lte=' + selectedDate[0].last;
+      searchDate = `&primary_release_date.gte=${selectedDate[0].first}&primary_release_date.lte=${selectedDate[0].last}`;
     } else {
-      let date = new Date();
+      const date = new Date();
       //今日
-      let today = date.getFullYear() + '-' + dateZeroPadding(date.getMonth() + 1) + '-' + dateZeroPadding(date.getDate());
-      searchDate = '&primary_release_date.gte=' + today;
+      const today = date.getFullYear() + '-' + dateZeroPadding(date.getMonth() + 1) + '-' + dateZeroPadding(date.getDate());
+      searchDate = `&primary_release_date.gte=${today}`;
     }
 
     //ジャンル
     let searchGenre = '';
-    let copyCheckedItems = checkedItems;
+    const copyCheckedItems = checkedItems;
     let checkedItemsArray = [];
 
-    let result = copyCheckedItems.filter((u) => u.checked === true);
+    const resultGenre = copyCheckedItems.filter((u) => u.checked === true);
 
-    if (0 < result.length) {
-      for (var i = 0; i < result.length; i++) {
-        checkedItemsArray.push(result[i].id);
+    if (0 < resultGenre.length) {
+      for (var i = 0; i < resultGenre.length; i++) {
+        checkedItemsArray.push(resultGenre[i].id);
       }
-      searchGenre = '&with_genres=' + checkedItemsArray.join(',');
+      searchGenre = `&with_genres=${checkedItemsArray.join(',')}`;
     }
 
     //ページ数
-    let searchCurrentPage = '&page=' + currentPage;
+    const searchCurrentPage = `&page=${currentPage}`;
 
     //ソート
-    let searchSort = '&sort_by=' + sort;
+    const searchSort = `&sort_by=${sort}`;
 
-    return '&language=ja&include_adult=false&include_video=false' + searchDate + searchGenre + searchCurrentPage + searchSort;
+    return `&language=ja&include_adult=false&include_video=false${searchDate}${searchGenre}${searchCurrentPage}${searchSort}`;
   }
 
   useEffect(() => {
     if (searchFlg) {
 
-      const getApi = getApiUrl();
+      const apiParameters = getApiUrl();
 
       setIsEmpty(false);
       setIsLoading(true);
 
-      const url = 'https://api.themoviedb.org/3/discover/movie?api_key=' + TMDB_API_KEY + getApi;
+      const url = 'https://api.themoviedb.org/3/discover/movie?api_key=' + TMDB_API_KEY + apiParameters;
 
 
 
@@ -86,19 +84,19 @@ export const GetSearch = (
           setSearchPosts(resultData);
           setMoreBtn(false);
         } else {
-
           setSearchPosts(result.data.results);
         }
+
         setTotalPages(Number(result.data.total_pages));
         let num = Number(result.data.total_results);
         setTotalResults(num.toLocaleString());
         setSearchFlg(false);
         setIsLoading(false);
 
-
         if (result.data.results <= 0) {
           setIsEmpty(true);
         }
+
         setApiSuccess(true);
 
       })()

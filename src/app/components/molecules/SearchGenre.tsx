@@ -11,7 +11,7 @@ import { typeSessionGenres } from '@/app/types/api';
 
 export const SearchGenre = () => {
 
-  const { checkedItems, setCheckedItems, genres, setGenres,
+  const { checkedItems, setCheckedItems, genres,
   } = useContext(CountContext);
 
 
@@ -52,17 +52,21 @@ export const SearchGenre = () => {
       <div className="mt-10">
         <SectionTitle mode='primary'>ジャンル</SectionTitle>
         <div className="search-content">
-          <ul className="flex flex-wrap gap-4">
-            {
-              checkedItems.map((item: typeSessionGenres, index: number) => {
-                return (
-                  <li key={index} className=''>
-                    <Checkbox id={item.id} index={index} checked={item.checked} checkboxClick={checkboxClick} name={item.name} />
-                  </li>
-                )
-              })
-            }
-          </ul>
+          {
+            0 < checkedItems.length && (
+              <ul className="flex flex-wrap gap-4">
+                {
+                  checkedItems.map((item: typeSessionGenres, index: number) => {
+                    return (
+                      <li key={index} className=''>
+                        <Checkbox id={item.id} index={index} checked={item.checked} checkboxClick={checkboxClick} name={item.name} />
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            )
+          }
         </div>
       </div>
     </>

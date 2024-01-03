@@ -2,11 +2,17 @@ export const SearchButton = (
   props: {
     setSearchFlg: React.Dispatch<React.SetStateAction<boolean>>,
     setFirstSearchFlg: React.Dispatch<React.SetStateAction<boolean>>,
+    setMoreBtn: React.Dispatch<React.SetStateAction<boolean>>,
+    setCurrentPage: React.Dispatch<React.SetStateAction<number>>,
    }
   ) => {
+  const { setSearchFlg, setFirstSearchFlg, setMoreBtn, setCurrentPage } = props;
+
   const searchClick = () => {
-    props.setSearchFlg(true)
-    props.setFirstSearchFlg(true)
+    setSearchFlg(true)
+    setFirstSearchFlg(true)
+    setMoreBtn(false);
+    setCurrentPage(1);
   }
   return (
     <button className="button" onClick={searchClick}>

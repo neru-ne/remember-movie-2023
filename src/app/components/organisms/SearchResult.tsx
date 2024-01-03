@@ -20,7 +20,7 @@ import { typeSelectbox } from "@/app/types/components"
 
 
 export const SearchResult = () => {
-  const { resultFlg, isEmpty, apiSuccess, setSort, searchPosts, currentPage, totalPages, totalResults
+  const { resultFlg, isEmpty, apiSuccess, setSort, searchPosts, currentPage, totalPages, totalResults, setCurrentPage
   } = useContext(CountContext);
 
   const [searchFlg, setSearchFlg] = useState(false);
@@ -57,7 +57,7 @@ export const SearchResult = () => {
   return (
     <>
       <div className="flex justify-center px-4 inner">
-        <SearchButton setSearchFlg={setSearchFlg} setFirstSearchFlg={setFirstSearchFlg} />
+        <SearchButton setSearchFlg={setSearchFlg} setFirstSearchFlg={setFirstSearchFlg} setMoreBtn={setMoreBtn} setCurrentPage={setCurrentPage} />
       </div>
       <div className={
         resultFlg ? 'result is-show mt-[100px]' : 'result mt-[100px]'

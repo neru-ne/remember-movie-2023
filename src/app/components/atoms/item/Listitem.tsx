@@ -38,9 +38,13 @@ export const Listitem = (
   return (
     <li className='grid grid-rows-subgrid row-span-3 gap-3.5' onClick={openModal}>
       <img src={imgUrl} alt="" />
-      <div className="">
-        <DateLabel>{itemDate}</DateLabel>
-      </div>
+      {
+        itemDate && (
+          <div className="">
+            <DateLabel>{itemDate}</DateLabel>
+          </div>
+        )
+      }
       <p className="text-lg">{title}</p>
     </li>
   )

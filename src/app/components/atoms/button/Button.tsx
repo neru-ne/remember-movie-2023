@@ -28,7 +28,7 @@ export const Button = (
         link && url
           ?
           (
-            <Link href={url} className={buttonClass} onClick={click}>
+            <Link href={url} className={buttonClass} >
               {children}
             </Link >
           )

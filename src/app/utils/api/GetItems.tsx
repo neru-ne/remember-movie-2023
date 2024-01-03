@@ -2,6 +2,7 @@
 import { useContext, useEffect } from 'react';
 import { CountContext } from '@/app/layout';
 
+import { dateZeroPadding } from '@/app/utils/common';
 import { sendApi, pageShow } from '@/app/utils/api/api'
 
 const TMDB_API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
@@ -20,21 +21,20 @@ export const GetItems = () => {
    * urlの取得
    */
   const getApiUrl = () => {
-    //ゼロ埋め
-    const dateZeroPadding = (data: number) => {
-      return ('0' + data).slice(-2);
-    }
-    let date = new Date();
+
+    const date = new Date();
     //今日
-    let today = date.getFullYear() + '-' + dateZeroPadding(date.getMonth() + 1) + '-' + dateZeroPadding(date.getDate());
+    const today = date.getFullYear() + '-' + dateZeroPadding(date.getMonth() + 1) + '-' + dateZeroPadding(date.getDate());
 
     //さらいげつ
-    let newNextMonth2 = new Date(date.getFullYear(), date.getMonth() + 2, 0);
+    const newNextMonth2 = new Date(date.getFullYear(), date.getMonth() + 2, 0);
 
     //来月末
-    let nextMonthLast = newNextMonth2.getFullYear() + '-' + dateZeroPadding(newNextMonth2.getMonth() + 1) + '-' + dateZeroPadding(newNextMonth2.getDate());
+    const nextMonthLast = newNextMonth2.getFullYear() + '-' + dateZeroPadding(newNextMonth2.getMonth() + 1) + '-' + dateZeroPadding(newNextMonth2.getDate());
 
-    return '&language=ja&sort_by=popularity.desc&include_adult=false&include_video=false&primary_release_date.gte=' + today + '&primary_release_date.lte=' + nextMonthLast;
+    const resultUrl = `&language=ja&sort_by=popularity.desc&include_adult=false&include_video=false&primary_release_date.gte=${today}&primary_release_date.lte=${nextMonthLast}`;
+
+    return resultUrl;
   }
 
   useEffect(() => {
