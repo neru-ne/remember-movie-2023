@@ -1,6 +1,6 @@
 'use client';
 import  {useContext } from 'react';
-import { CountContext } from '@/app/layout';
+import { CountContext } from "@/app/components/layouts/Body"
 import { typeSearchMoreButton } from '@/app/types/components';
 
 export const SearchMoreButton = (props: typeSearchMoreButton) => {

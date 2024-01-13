@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useContext } from 'react';
-import { CountContext } from '@/app/layout';
+import { CountContext } from "@/app/components/layouts/Body"
 
 import { TopPageHeading } from '@/app/components/atoms/heading/TopPageHeading';
 import { SearchButton } from '@/app/components/atoms/button/SearchButton';
@@ -110,7 +110,7 @@ export const SearchResult = () => {
               </div>
             </>
             :
-            <div className=''>
+            <div className='inner px-4'>
               現在エラーが発生しています。時間を置いてからお試しください。
             </div>
         }

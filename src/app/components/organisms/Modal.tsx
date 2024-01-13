@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext } from 'react';
-import { CountContext } from '@/app/layout';
+import { CountContext } from "@/app/components/layouts/Body"
 
 import { ModalContent } from '@/app/components/molecules/ModalContent';
 import { ModalCloseButton } from '@/app/components/atoms/button/ModalCloseButton'

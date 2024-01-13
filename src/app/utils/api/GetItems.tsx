@@ -1,6 +1,6 @@
 "use client"
 import { useContext, useEffect } from 'react';
-import { CountContext } from '@/app/layout';
+import { CountContext } from "@/app/components/layouts/Body"
 
 import { dateZeroPadding } from '@/app/utils/common';
 import { sendApi, pageShow } from '@/app/utils/api/api'

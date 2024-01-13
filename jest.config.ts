@@ -21,8 +21,8 @@ module.exports = {
     ],
   ],
   moduleNameMapper: {
-    "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
-    "src(.*)$": "<rootDir>/src/$1"
+    "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.ts",
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 
   //playwrightをJestのテスト範囲から除外

@@ -10,7 +10,7 @@ export function FooterList(props: typeFooterList[]) {
             const listClass = index != 0 ? "mt-5" :"";
             return(
               <li key={`footerList-${index}`} className={listClass}>
-                <Link href={item.url}>{item.name}</Link>
+                <Link href={item.url} className="break-all">{item.name}</Link>
               </li>
             )
           })

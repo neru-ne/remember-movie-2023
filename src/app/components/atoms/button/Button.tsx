@@ -34,9 +34,9 @@ export const Button = (
           )
           :
           (
-            <div className={buttonClass} onClick={click}>
+            <button className={buttonClass} onClick={click}>
               {children}
-            </div >
+            </button >
           )
       }
     </>

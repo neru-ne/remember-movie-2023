@@ -123,11 +123,6 @@ body.is-fixed {
     right: 0;
   }
 
-  .footer-navi>li a {
-    @apply flex items-center justify-center p-1 text-white;
-    width: 100%;
-  }
-
   .footer-navi__items span {
     @apply text-center;
     display: block;
@@ -232,7 +227,7 @@ a:not([class])[target=_blank]::after {
 
 /* button  */
 .button {
-  @apply text-white font-bold bg-primary rounded-md w-full max-w-[600px] mx-auto py-[18px] px-2.5 no-underline text-center cursor-pointer;
+  @apply  block text-white font-bold bg-primary rounded-md w-full max-w-[600px] mx-auto py-[18px] px-2.5 no-underline text-center cursor-pointer;
 }
 
 .button-sm {

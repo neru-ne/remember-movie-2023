@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect } from 'react';
-import { CountContext } from '@/app/layout';
+import { CountContext } from "@/app/components/layouts/Body"
 
 import { SectionTitle } from "@/app/components/atoms/heading/SectionTitle"
 
@@ -11,15 +11,19 @@ import { typeSessionGenres } from '@/app/types/api';
 
 export const SearchGenre = () => {
 
-  const { checkedItems, setCheckedItems, genres,
+  const { checkedItems, setCheckedItems, genres, setGenres,
   } = useContext(CountContext);
-
 
   /**
  * ジャンル
  */
   const genreSet = () => {
-    const genre: typeSessionGenres[] = [...genres];
+    const sessionGenres = sessionStorage.getItem('genres');
+
+    if (!sessionGenres){
+      return;
+    }
+    const genre: typeSessionGenres[] = JSON.parse(sessionGenres);
     for (let i = 0; i < genre.length; i++) {
       genre[i].checked = false;
     }
@@ -27,10 +31,9 @@ export const SearchGenre = () => {
   }
 
   useEffect(() => {
-    if (Object.keys(genres).length != 0) {
-      genreSet();
-    }
+        genreSet();
   }, [genres])
+
 
 
   const checkboxClick = (e: any) => {

@@ -1,6 +1,6 @@
 'use client';
 import { useContext } from 'react';
-import { CountContext } from '@/app/layout';
+import { CountContext } from "@/app/components/layouts/Body"
 import { typeItem } from "@/app/types/components";
 import { DateLabel } from '@/app/components/atoms/label/DateLabel';
 import { dateFormated } from "@/app/utils/common"

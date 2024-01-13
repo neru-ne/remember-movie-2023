@@ -4,8 +4,8 @@ export const ModalCloseButton = (
   const { click, children } = props;
 
   return (
-    <div className='button-sm' onClick={click}>
+    <button className='button-sm' onClick={click}>
       {children}
-    </div>
+    </button>
   )
 }
