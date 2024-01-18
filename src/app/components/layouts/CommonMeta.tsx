@@ -6,6 +6,10 @@ type Props = {
   imageUrl: string
 }
 
+let DOMAIN = process.env.SITE_URL;
+if (!DOMAIN) {
+  DOMAIN = "http://localhost:3000"
+}
 const siteTitle = "Remember Movie";
 
 export const CommonMeta = (props: Props) => {
@@ -36,8 +40,8 @@ export const CommonMeta = (props: Props) => {
       {/* <link rel="canonical" href={url} /> */}
 
       {/* shortcut icon */}
-      <link rel="shortcut icon" href="assets/images/android-touch-icon.png"/>
-      <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+      <link rel="shortcut icon" href={`${DOMAIN}/assets/images/android-touch-icon.png`}/>
+      <link rel="apple-touch-icon" href={`${DOMAIN}/assets/images/apple-touch-icon.png`} />
     </>
   )
 }

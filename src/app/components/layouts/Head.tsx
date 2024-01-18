@@ -8,15 +8,15 @@ export function Head () {
   const pathname: keyof typeMetaDataObj = usePathname();
 
   const hasKey = pathname in metaData;
-  let metadata: typeMetaData;
+  let setMeta: typeMetaData;
 
   if (hasKey) {
     const key = pathname as keyof typeof metaData;
-    metadata = metaData[key];
+    setMeta = metaData[key];
   } else {
-    metadata = metaData["/"];
+    setMeta = metaData["/"];
   }
   return(
-      <CommonMeta {...metadata} />
+    <CommonMeta {...setMeta} />
   )
 }

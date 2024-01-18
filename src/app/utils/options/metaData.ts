@@ -1,6 +1,11 @@
 const siteTitle = "Remember Movie";
-const DOMAIN = "https://remember-movie.style01.net";
-const ogp = "assets/images/OGP.jpg";
+let DOMAIN = process.env.SITE_URL;
+
+if(!DOMAIN){
+  DOMAIN = "http://localhost:3000"
+}
+
+const ogp = `${DOMAIN}/assets/images/OGP.jpg`;
 export const metaData = {
   "/": {
     title: siteTitle,
