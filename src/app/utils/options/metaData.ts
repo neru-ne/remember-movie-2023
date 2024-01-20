@@ -1,8 +1,8 @@
 const siteTitle = "Remember Movie";
-let DOMAIN = process.env.SITE_URL;
+let DOMAIN = process.env.NEXT_PUBLIC_SITE_URL;
 
 if(!DOMAIN){
-  DOMAIN = "http://localhost:3000"
+  DOMAIN = ""
 }
 
 const ogp = `${DOMAIN}/assets/images/OGP.jpg`;
