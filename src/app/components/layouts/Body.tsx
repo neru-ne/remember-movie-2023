@@ -5,6 +5,9 @@ import { Header } from "@/app/components/layouts/Header"
 import { Footer } from '@/app/components/layouts/Footer'
 import { Loading } from '@/app/components/atoms/loading/Loading';
 
+//api
+import { GetGenres } from '@/app/utils/api/GetGenres';
+
 //type
 import { typeSelectedDateProps } from '@/app/types/context'
 import { typeSessionGenres } from '@/app/types/api';
@@ -110,6 +113,9 @@ export const Body = ({
     totalResults,
     setTotalResults,
   };
+
+  //ジャンル取得
+  GetGenres(setGenres, setCheckedItems);
 
   return (
     <CountContext.Provider value={value}>

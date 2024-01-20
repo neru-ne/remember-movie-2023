@@ -52,6 +52,7 @@ export const SearchResult = () => {
         name: "公開予定が近い順",
       },
     ],
+    name:"sort-select",
     selectChange: sortSelectChange,
   }
   return (
@@ -102,7 +103,7 @@ export const SearchResult = () => {
                       </div>
                     </div>
                   </div>
-                  : <div className='mt-[130px] mb-30px'><p>検索条件にヒットするものはありませんでした。</p></div>
+                  : <div className='mt-[130px] mb-[30px] text-center'><p>検索条件にヒットするものはありませんでした。</p></div>
                 }
                 {
                   firstSearchFlg && <SearchScroll />

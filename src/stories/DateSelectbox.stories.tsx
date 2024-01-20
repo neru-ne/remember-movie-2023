@@ -46,5 +46,6 @@ export const Default: Story = {
   args: {
     data: data,
     selectChange: action("clicked"),
+    name:"demo"
   },
 };

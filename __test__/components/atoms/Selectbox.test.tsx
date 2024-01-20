@@ -29,6 +29,7 @@ describe('Selectbox', () => {
           name: "公開予定が近い順",
         },
       ],
+      name:"select-id",
       selectChange: clickEvent,
     };
   });

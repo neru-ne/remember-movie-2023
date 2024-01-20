@@ -30,7 +30,7 @@ export const SearchDate = () => {
   return (
     <div >
       <SectionTitle mode='primary'>公開時期</SectionTitle>
-      <DateSelectbox data={dateArray} selectChange={selectChange} />
+      <DateSelectbox data={dateArray} selectChange={selectChange} name="select-data" />
     </div>
   )
 }

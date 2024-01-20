@@ -38,6 +38,7 @@ export const Default: Story = {
   args: {
     domId: "demo-1",
     data: data,
+    name:"demo-1",
     selectChange: action("clicked"),
   },
 };

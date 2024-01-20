@@ -31,13 +31,16 @@ export function Footer() {
       url: "/disclaimer"
     },
   ];
-  const footerNaviArray: typeFooterNavi = {
+  let footerNaviArray: typeFooterNavi = {
     home: {
       active: true,
     },
     search: {
       active: true,
     }
+  }
+  if (pathname === "/search"){
+    footerNaviArray.search.active = false;
   }
   return (
     <>

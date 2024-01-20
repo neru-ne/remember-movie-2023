@@ -52,11 +52,13 @@ export type typeSelectbox = {
     value: string;
     name: string
   }[];
+  name:string;
   selectChange: any;
 }
 
 export type typeDateSelectbox = {
   data: { date: string; first: string; last: string; }[];
+  name:string;
   selectChange: any;
 }
 

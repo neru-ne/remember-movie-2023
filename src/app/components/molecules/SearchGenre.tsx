@@ -18,16 +18,17 @@ export const SearchGenre = () => {
  * ジャンル
  */
   const genreSet = () => {
-    const sessionGenres = sessionStorage.getItem('genres');
+    // const sessionGenres = sessionStorage.getItem('genres');
+    // console.log(sessionGenres)
 
-    if (!sessionGenres){
-      return;
-    }
-    const genre: typeSessionGenres[] = JSON.parse(sessionGenres);
-    for (let i = 0; i < genre.length; i++) {
-      genre[i].checked = false;
-    }
-    setCheckedItems(genre);
+    // if (!sessionGenres){
+    //   return;
+    // }
+    // const genre: typeSessionGenres[] = JSON.parse(sessionGenres);
+    // for (let i = 0; i < genre.length; i++) {
+    //   genre[i].checked = false;
+    // }
+    // setCheckedItems(genre);
   }
 
   useEffect(() => {
