@@ -1,5 +1,5 @@
 import Script from 'next/script';
-const GA_ID = process.env.REACT_APP_GA_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const Gtag = () => {
   return (
@@ -10,7 +10,7 @@ export const Gtag = () => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', ${GA_ID});
+          gtag('config', '${GA_ID}');
         `}
       </Script>
     </div>
